@@ -28,17 +28,16 @@ app.config(function($routeProvider) {
         });
 });
 
-/*
 //used for basic read from json
-app.factory('postService', function($http){
-	var baseUrl = "sample.json";
-	var factory = {};
-	factory.getAll = function(){
-		return $http.get(baseUrl);
-	};
-	return factory;
+app.factory('postService', function($http) {
+    var baseUrl = "sample.json";
+    var factory = {};
+    factory.getAll = function() {
+        return $http.get(baseUrl);
+    };
+    return factory;
 });
-*/
+
 app.factory('postService', function($resource) {
     return $resource('/api/posts/:id');
 });
